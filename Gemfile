@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
-# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+ruby "3.4.4"
+
 gem "rails", "~> 8.0.2"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
@@ -49,6 +50,7 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+  gem 'rspec-rails', '~> 8.0.0'
 end
 
 group :development do
