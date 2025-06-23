@@ -7,6 +7,10 @@
 <div id="brews">
   <% @brews.each do |brew| %>
     <%= render brew %>
+    <p>
+      <%= link_to "Show this brew", brew %>
+    </p>
+    <br>
   <% end %>
 </div>
 

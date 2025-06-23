@@ -1,0 +1,12 @@
+<% content_for :title, "Editing brew" %>
+
+<h1>Editing brew</h1>
+
+<%= render "form", brew: @brew %>
+
+<br>
+
+<div>
+  <%= link_to "Show this brewer", @brew %> |
+  <%= link_to "Back to brewers", brewers_path %>
+</div>
