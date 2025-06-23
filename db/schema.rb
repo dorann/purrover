@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_23_180449) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_23_190947) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -20,6 +20,25 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_23_180449) do
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_brewers_on_user_id"
+  end
+
+  create_table "brews", force: :cascade do |t|
+    t.string "coffee_name"
+    t.string "coffee_roast"
+    t.decimal "coffee_weight_value"
+    t.string "coffee_weight_unit"
+    t.decimal "coffee_parts"
+    t.decimal "water_parts"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pours", force: :cascade do |t|
+    t.decimal "water_weight_value"
+    t.string "water_weight_unit"
+    t.integer "duration_in_seconds"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "sessions", force: :cascade do |t|
