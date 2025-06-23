@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_23_190947) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_23_192457) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -31,6 +31,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_23_190947) do
     t.decimal "water_parts"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "brewer_id", null: false
+    t.index ["brewer_id"], name: "index_brews_on_brewer_id"
   end
 
   create_table "pours", force: :cascade do |t|
@@ -39,6 +41,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_23_190947) do
     t.integer "duration_in_seconds"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "brew_id", null: false
+    t.index ["brew_id"], name: "index_pours_on_brew_id"
   end
 
   create_table "sessions", force: :cascade do |t|
@@ -59,5 +63,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_23_190947) do
   end
 
   add_foreign_key "brewers", "users"
+  add_foreign_key "brews", "brewers"
+  add_foreign_key "pours", "brews"
   add_foreign_key "sessions", "users"
 end
