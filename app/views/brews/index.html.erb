@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Brews" %>
+
+<h1>Brews</h1>
+
+<div id="brews">
+  <% @brews.each do |brew| %>
+    <%= render brew %>
+  <% end %>
+</div>
+
+
+<%= link_to "New brew", new_brew_path %>
