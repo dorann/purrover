@@ -58,6 +58,6 @@ class BrewsController < ApplicationController
   end
 
   def brew_params
-    params.expect(brew: [ :coffee_name, :coffee_roast ])
+    params.expect(brew: [ :coffee_name, :coffee_roast, :water_parts, :coffee_parts ])
   end
 end

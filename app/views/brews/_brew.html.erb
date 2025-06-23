@@ -7,5 +7,11 @@
 
     <strong>Coffee Roast:</strong>
     <%= brew.coffee_roast %>
-  </p>
+
+    <br>
+
+  <% if brew.water_parts.present? && brew.coffee_parts.present? %>
+    <strong>Coffee to Water Ratio:</strong>
+    <%= "#{brew.water_parts} / #{brew.coffee_parts}" %>
+  <% end %>
 </div>
