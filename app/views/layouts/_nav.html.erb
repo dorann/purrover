@@ -1,0 +1,18 @@
+<% if authenticated? %>
+  <header class="bg-white">
+    <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
+      <div class="flex lg:flex-1">
+        <%= link_to root_path, class: "-m-1.5 p-1.5" do %>
+          <span class="sr-only">Purrover</span>
+          <%= image_tag "https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600", class: "h-8 w-auto" %>
+        <% end %>
+      </div>
+      <div class="flex lg:flex-1">
+        <%= link_to "All Brews", root_path, class: "text-sm/6 font-semibold text-gray-900" %>
+      </div>
+      <div class="flex lg:flex-1">
+        <%= button_to "Log out", session_path, class: "text-sm/6 font-semibold text-gray-900 cursor-pointer", method: :delete if authenticated? %>
+      </div>
+    </nav>
+  </header>
+<% end %>
