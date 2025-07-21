@@ -1,19 +1,23 @@
 <p style="color: green"><%= notice %></p>
+<% content_for :title, "Saved Brews" %>
 
-<% content_for :title, "Brews" %>
-
-<h1>Brews</h1>
-
-<%= link_to "New brew", new_brew_path %>
-<br>
-<br>
-
-<div id="brews">
-  <% @brews.each do |brew| %>
-    <%= render brew %>
-    <p>
-      <%= link_to "Show this brew", brew %>
-    </p>
-    <br>
-  <% end %>
+<div class="flex items-center justify-between">
+  <div class="min-w-0 flex-1">
+    <h2 class="text-2xl/7 font-bold text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">Saved Brews</h2>
+  </div>
+  <div class="flex lg:mt-0 lg:ml-4">
+    <%= link_to "+ New brew", new_brew_path, class: "inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" %>
+  </div>
 </div>
+
+  <br>
+  <br>
+  <div id="brews">
+    <% @brews.each do |brew| %>
+      <%= render brew %>
+      <p>
+        <%= link_to "Show this brew", brew %>
+      </p>
+      <br>
+    <% end %>
+  </div>

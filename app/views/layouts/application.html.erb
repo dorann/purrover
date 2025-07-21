@@ -26,7 +26,10 @@
 
   <body class="h-full">
     <%= render "layouts/nav" %>
-
-    <%= yield %>
+    <div class="bg-white p-8">
+      <div class="mx-auto max-w-7xl">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
