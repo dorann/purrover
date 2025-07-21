@@ -10,14 +10,20 @@
   </div>
 </div>
 
-  <br>
-  <br>
-  <div id="brews">
+<br>
+<br>
+<div id="brews" class="mx-auto max-w-4xl">
+  <ul role="list" class="divide-y divide-gray-100">
     <% @brews.each do |brew| %>
-      <%= render brew %>
-      <p>
-        <%= link_to "Show this brew", brew %>
-      </p>
-      <br>
+      <li class="flex items-center justify-between gap-x-6 py-5">
+        <div class="flex min-w-0 gap-x-4">
+          <%= render brew %>
+        </div>
+        <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+          <%= link_to "Show this brew", brew %>
+        </div>
+      </li>
     <% end %>
-  </div>
+  </ul>
+
+</div>
